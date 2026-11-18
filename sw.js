@@ -1,7 +1,7 @@
 /* Badge PresenzeMag: tiene la pagina salvata sul telefono, così il badge funziona anche senza internet.
    Quando c'è internet scarica in silenzio la versione nuova, che si vede alla riapertura dopo.
    Cambiare VERSIONE a ogni aggiornamento della pagina. */
-var VERSIONE = "badge-1.0";
+var VERSIONE = "badge-1.1";
 var FILE = ["./", "index.html", "manifest.webmanifest", "icona-192.png", "icona-512.png", "icona-180.png"];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSIONE).then(function (c) { return c.addAll(FILE); }).then(function () { return self.skipWaiting(); }));
